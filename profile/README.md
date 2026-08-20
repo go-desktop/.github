@@ -20,7 +20,7 @@ The ecosystem is split into **one organisation per domain and one repository per
 capability**, so a program that needs an ext4 reader takes an ext4 reader and not a
 storage framework.
 
-🌐 **[go-desktop.github.io](https://go-desktop.github.io/)** — the same map, browsable.
+🌐 **[go-desktop.github.io](https://go-desktop.github.io/)** — the same map, browsable · 📚 **[Documentation](https://go-desktop.github.io/docs/)** — with a [capability lookup](https://go-desktop.github.io/docs/latest/finding/): what you need, and the module that already does it.
 
 ## What every repository is held to
 
