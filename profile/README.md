@@ -2,15 +2,13 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 287 organisations, 564 public code repositories,
-no C anywhere.**
+**A map of one pure-Go ecosystem — 288 organisations, 565 public code repositories, no C anywhere.**
 
-This organisation holds no library of its own. It is the front door: an index of
-every organisation in the ecosystem, grouped by what the code does, so that a
-capability can be found without knowing which organisation happens to own it.
+This organisation holds no library. It holds the index — and the tool that
+generates it, so that no number on any of these pages is typed by hand.
 
-Every library here is written in Go and compiled with `CGO_ENABLED=0`. That is not
-a stylistic preference — it is what makes one binary cross-compile to six
+Every library in the map is written in Go and compiled with `CGO_ENABLED=0`. That
+is not a stylistic preference: it is what makes one binary cross-compile to six
 architectures, run inside a browser as WebAssembly, and boot on bare metal without
 a libc. Where a good pure-Go library already exists it is used rather than
 rewritten; where the only option was a C library behind cgo, the capability was
@@ -236,38 +234,84 @@ Two engines hand-ported to pure Go, one of them onto bare metal.
 | [`go-quake1`](https://github.com/go-quake1) | 1 | Quake 1, hand-ported from tyrquake, with a bare-metal target. |
 | [`go-doom`](https://github.com/go-doom) | 1 | DOOM, hand-ported through the gore lineage, with a TamaGo bare-metal back-end. |
 
+## The map itself
+
+The one thing this organisation does hold: the tool that generates every page here.
+
+| Organisation | Repos | What it holds |
+| --- | --- | --- |
+| [`go-desktop`](https://github.com/go-desktop) | 1 | The generator. It reads the live GitHub organisation list and reconciles it against a curated classification, then writes the landing configuration, the family pages, the gem list and this profile. The reconciliation is the point: an organisation that holds code but is in no family fails the build, so the index cannot quietly omit something that exists. |
+
 ## Ruby gems — one organisation each
 
-The Ruby virtual machine is only useful with a library around it. Each gem it
-needs is reimplemented in pure Go in its own `go-ruby-*` organisation: the
-standard library, Rails and its dependencies, the testing stack, the Puppet
-stack, database drivers, serialisation formats and template engines. Every one of
-them is byte-compared against MRI where a byte comparison is meaningful.
+A Ruby virtual machine is only useful with a library around it, so each gem the
+ecosystem needs is reimplemented in pure Go in its own `go-ruby-*` organisation:
+the standard library, Rails and its dependencies, the testing stack, the Puppet
+stack, database drivers, serialisation formats and template engines.
+
+Every one of them is byte-compared against MRI where a byte comparison is
+meaningful — a checksum, a `Marshal` payload, a formatted number. Where it is not
+(a deflate stream, say, whose output is implementation-defined) the requirement is
+interoperability in both directions instead.
+
+Two things to know before reaching for one:
+
+- **The gem organisation is the Ruby-facing wrapper, not always the engine.** Some
+  are thin shells over an engine that lives in its own non-Ruby organisation — the
+  regexp gem wraps [`go-regexp/engine`](https://github.com/go-regexp/engine), the
+  sass gem wraps [`go-scss/scss`](https://github.com/go-scss/scss). If you are
+  writing Go rather than Ruby, take the engine.
+- **The repository inside is named after the gem**, not after the organisation:
+  `go-ruby-activerecord/activerecord`.
 
 <details><summary><strong>196 gem organisations</strong> — click to expand</summary>
 
 [`aasm`](https://github.com/go-ruby-aasm) · [`abbrev`](https://github.com/go-ruby-abbrev) · [`acme`](https://github.com/go-ruby-acme) · [`actioncable`](https://github.com/go-ruby-actioncable) · [`actionmailer`](https://github.com/go-ruby-actionmailer) · [`actionpack`](https://github.com/go-ruby-actionpack) · [`actionview`](https://github.com/go-ruby-actionview) · [`activejob`](https://github.com/go-ruby-activejob) · [`activeldap`](https://github.com/go-ruby-activeldap) · [`activemodel`](https://github.com/go-ruby-activemodel) · [`activerecord`](https://github.com/go-ruby-activerecord) · [`activestorage`](https://github.com/go-ruby-activestorage) · [`activesupport`](https://github.com/go-ruby-activesupport) · [`addressable`](https://github.com/go-ruby-addressable) · [`age`](https://github.com/go-ruby-age) · [`arrow`](https://github.com/go-ruby-arrow) · [`async`](https://github.com/go-ruby-async) · [`augeas`](https://github.com/go-ruby-augeas) · [`base64`](https://github.com/go-ruby-base64) · [`bbolt`](https://github.com/go-ruby-bbolt) · [`bcrypt`](https://github.com/go-ruby-bcrypt) · [`benchmark`](https://github.com/go-ruby-benchmark) · [`bigdecimal`](https://github.com/go-ruby-bigdecimal) · [`bleve`](https://github.com/go-ruby-bleve) · [`builder`](https://github.com/go-ruby-builder) · [`bundler`](https://github.com/go-ruby-bundler) · [`cancancan`](https://github.com/go-ruby-cancancan) · [`capistrano`](https://github.com/go-ruby-capistrano) · [`capybara`](https://github.com/go-ruby-capybara) · [`cgi`](https://github.com/go-ruby-cgi) · [`chronic`](https://github.com/go-ruby-chronic) · [`cmath`](https://github.com/go-ruby-cmath) · [`commonmark`](https://github.com/go-ruby-commonmark) · [`complex`](https://github.com/go-ruby-complex) · [`concurrent-ruby`](https://github.com/go-ruby-concurrent-ruby) · [`confd`](https://github.com/go-ruby-confd) · [`connection-pool`](https://github.com/go-ruby-connection-pool) · [`csv`](https://github.com/go-ruby-csv) · [`date`](https://github.com/go-ruby-date) · [`deep-merge`](https://github.com/go-ruby-deep-merge) · [`devise`](https://github.com/go-ruby-devise) · [`did-you-mean`](https://github.com/go-ruby-did-you-mean) · [`digest`](https://github.com/go-ruby-digest) · [`dimail`](https://github.com/go-ruby-dimail) · [`dotenv`](https://github.com/go-ruby-dotenv) · [`dry-struct`](https://github.com/go-ruby-dry-struct) · [`dry-types`](https://github.com/go-ruby-dry-types) · [`dry-validation`](https://github.com/go-ruby-dry-validation) · [`erasure`](https://github.com/go-ruby-erasure) · [`erb`](https://github.com/go-ruby-erb) · [`erubi`](https://github.com/go-ruby-erubi) · [`etcd`](https://github.com/go-ruby-etcd) · [`excon`](https://github.com/go-ruby-excon) · [`facter`](https://github.com/go-ruby-facter) · [`factory-bot`](https://github.com/go-ruby-factory-bot) · [`faker`](https://github.com/go-ruby-faker) · [`faraday`](https://github.com/go-ruby-faraday) · [`fast-gettext`](https://github.com/go-ruby-fast-gettext) · [`fast-gettext-locale`](https://github.com/go-ruby-fast-gettext-locale) · [`find`](https://github.com/go-ruby-find) · [`format`](https://github.com/go-ruby-format) · [`friendly-id`](https://github.com/go-ruby-friendly-id) · [`fsctl`](https://github.com/go-ruby-fsctl) · [`getoptlong`](https://github.com/go-ruby-getoptlong) · [`grape`](https://github.com/go-ruby-grape) · [`graphql`](https://github.com/go-ruby-graphql) · [`grpc`](https://github.com/go-ruby-grpc) · [`haml`](https://github.com/go-ruby-haml) · [`hanami`](https://github.com/go-ruby-hanami) · [`hcl2`](https://github.com/go-ruby-hcl2) · [`hiera`](https://github.com/go-ruby-hiera) · [`hiera-eyaml`](https://github.com/go-ruby-hiera-eyaml) · [`hocon`](https://github.com/go-ruby-hocon) · [`http`](https://github.com/go-ruby-http) · [`httparty`](https://github.com/go-ruby-httparty) · [`i18n`](https://github.com/go-ruby-i18n) · [`images`](https://github.com/go-ruby-images) · [`ipaddr`](https://github.com/go-ruby-ipaddr) · [`irb`](https://github.com/go-ruby-irb) · [`jbuilder`](https://github.com/go-ruby-jbuilder) · [`jekyll`](https://github.com/go-ruby-jekyll) · [`json`](https://github.com/go-ruby-json) · [`jwt`](https://github.com/go-ruby-jwt) · [`kafka`](https://github.com/go-ruby-kafka) · [`kaminari`](https://github.com/go-ruby-kaminari) · [`kramdown`](https://github.com/go-ruby-kramdown) · [`ldap`](https://github.com/go-ruby-ldap) · [`liquid`](https://github.com/go-ruby-liquid) · [`logger`](https://github.com/go-ruby-logger) · [`mail`](https://github.com/go-ruby-mail) · [`marshal`](https://github.com/go-ruby-marshal) · [`matrix`](https://github.com/go-ruby-matrix) · [`mime-types`](https://github.com/go-ruby-mime-types) · [`minitest`](https://github.com/go-ruby-minitest) · [`money`](https://github.com/go-ruby-money) · [`mongodb`](https://github.com/go-ruby-mongodb) · [`msgpack`](https://github.com/go-ruby-msgpack) · [`multi-json`](https://github.com/go-ruby-multi-json) · [`mustache`](https://github.com/go-ruby-mustache) · [`mysql`](https://github.com/go-ruby-mysql) · [`nats`](https://github.com/go-ruby-nats) · [`net-ftp`](https://github.com/go-ruby-net-ftp) · [`net-http`](https://github.com/go-ruby-net-http) · [`net-imap`](https://github.com/go-ruby-net-imap) · [`net-pop`](https://github.com/go-ruby-net-pop) · [`net-s3`](https://github.com/go-ruby-net-s3) · [`net-sftp`](https://github.com/go-ruby-net-sftp) · [`net-smtp`](https://github.com/go-ruby-net-smtp) · [`nokogiri`](https://github.com/go-ruby-nokogiri) · [`oauth2`](https://github.com/go-ruby-oauth2) · [`observer`](https://github.com/go-ruby-observer) · [`oidc`](https://github.com/go-ruby-oidc) · [`omniauth`](https://github.com/go-ruby-omniauth) · [`openbao`](https://github.com/go-ruby-openbao) · [`openssl`](https://github.com/go-ruby-openssl) · [`openstack`](https://github.com/go-ruby-openstack) · [`opentelemetry`](https://github.com/go-ruby-opentelemetry) · [`opentype`](https://github.com/go-ruby-opentype) · [`optparse`](https://github.com/go-ruby-optparse) · [`ostruct`](https://github.com/go-ruby-ostruct) · [`pagy`](https://github.com/go-ruby-pagy) · [`paper-trail`](https://github.com/go-ruby-paper-trail) · [`parquet`](https://github.com/go-ruby-parquet) · [`parser`](https://github.com/go-ruby-parser) · [`pathname`](https://github.com/go-ruby-pathname) · [`pg`](https://github.com/go-ruby-pg) · [`prawn`](https://github.com/go-ruby-prawn) · [`prettyprint`](https://github.com/go-ruby-prettyprint) · [`prime`](https://github.com/go-ruby-prime) · [`protobuf`](https://github.com/go-ruby-protobuf) · [`pstore`](https://github.com/go-ruby-pstore) · [`public-suffix`](https://github.com/go-ruby-public-suffix) · [`puma`](https://github.com/go-ruby-puma) · [`pundit`](https://github.com/go-ruby-pundit) · [`puppet`](https://github.com/go-ruby-puppet) · [`puppet-resource-api`](https://github.com/go-ruby-puppet-resource-api) · [`racc`](https://github.com/go-ruby-racc) · [`rack`](https://github.com/go-ruby-rack) · [`rails`](https://github.com/go-ruby-rails) · [`railties`](https://github.com/go-ruby-railties) · [`rake`](https://github.com/go-ruby-rake) · [`ransack`](https://github.com/go-ruby-ransack) · [`rational`](https://github.com/go-ruby-rational) · [`rdoc`](https://github.com/go-ruby-rdoc) · [`reddit`](https://github.com/go-ruby-reddit) · [`redis`](https://github.com/go-ruby-redis) · [`regexp`](https://github.com/go-ruby-regexp) · [`reline`](https://github.com/go-ruby-reline) · [`resolv`](https://github.com/go-ruby-resolv) · [`resque`](https://github.com/go-ruby-resque) · [`rexml`](https://github.com/go-ruby-rexml) · [`roda`](https://github.com/go-ruby-roda) · [`rolify`](https://github.com/go-ruby-rolify) · [`rouge`](https://github.com/go-ruby-rouge) · [`rqrcode`](https://github.com/go-ruby-rqrcode) · [`rspec`](https://github.com/go-ruby-rspec) · [`rss`](https://github.com/go-ruby-rss) · [`rubocop`](https://github.com/go-ruby-rubocop) · [`rubygems`](https://github.com/go-ruby-rubygems) · [`saml`](https://github.com/go-ruby-saml) · [`sass`](https://github.com/go-ruby-sass) · [`scanf`](https://github.com/go-ruby-scanf) · [`securerandom`](https://github.com/go-ruby-securerandom) · [`semantic-puppet`](https://github.com/go-ruby-semantic-puppet) · [`sequel`](https://github.com/go-ruby-sequel) · [`set`](https://github.com/go-ruby-set) · [`shellwords`](https://github.com/go-ruby-shellwords) · [`shrine`](https://github.com/go-ruby-shrine) · [`sidekiq`](https://github.com/go-ruby-sidekiq) · [`simplecov`](https://github.com/go-ruby-simplecov) · [`sinatra`](https://github.com/go-ruby-sinatra) · [`slim`](https://github.com/go-ruby-slim) · [`sodium`](https://github.com/go-ruby-sodium) · [`sqlite3`](https://github.com/go-ruby-sqlite3) · [`stdlib`](https://github.com/go-ruby-stdlib) · [`stringio`](https://github.com/go-ruby-stringio) · [`strscan`](https://github.com/go-ruby-strscan) · [`syslog`](https://github.com/go-ruby-syslog) · [`thor`](https://github.com/go-ruby-thor) · [`time`](https://github.com/go-ruby-time) · [`timecop`](https://github.com/go-ruby-timecop) · [`toml`](https://github.com/go-ruby-toml) · [`tsort`](https://github.com/go-ruby-tsort) · [`typhoeus`](https://github.com/go-ruby-typhoeus) · [`tzinfo`](https://github.com/go-ruby-tzinfo) · [`unicode-normalize`](https://github.com/go-ruby-unicode-normalize) · [`uri`](https://github.com/go-ruby-uri) · [`vcr`](https://github.com/go-ruby-vcr) · [`warden`](https://github.com/go-ruby-warden) · [`webauthn`](https://github.com/go-ruby-webauthn) · [`webmock`](https://github.com/go-ruby-webmock) · [`webrick`](https://github.com/go-ruby-webrick) · [`xslt`](https://github.com/go-ruby-xslt) · [`yaml`](https://github.com/go-ruby-yaml) · [`zeitwerk`](https://github.com/go-ruby-zeitwerk) · [`zlib`](https://github.com/go-ruby-zlib)
 
-
 </details>
 
 ## Held, not yet built
 
-These organisation names are reserved and empty. They are listed so the map has
-no silent gaps — an empty organisation is not a shipped one.
+These organisation names are reserved and empty. They are listed so the map has no
+silent gaps: an empty organisation is not a shipped one, and a name that looks like
+a capability is the easiest way to believe a capability exists.
 
-[`configuration-management-tool`](https://github.com/configuration-management-tool) · [`go-graphdrawing`](https://github.com/go-graphdrawing) · [`go-grub`](https://github.com/go-grub) · [`go-quake2`](https://github.com/go-quake2) · [`go-quake3`](https://github.com/go-quake3) · [`go-sicp`](https://github.com/go-sicp) · [`pocketdesk`](https://github.com/pocketdesk) · [`ssh-tools`](https://github.com/ssh-tools) · [`go-ruby-atproto`](https://github.com/go-ruby-atproto) · [`go-ruby-birdsite`](https://github.com/go-ruby-birdsite) · [`go-ruby-hackernews`](https://github.com/go-ruby-hackernews) · [`go-ruby-instagram`](https://github.com/go-ruby-instagram) · [`go-ruby-mastodon`](https://github.com/go-ruby-mastodon) · [`go-ruby-newsgroups`](https://github.com/go-ruby-newsgroups) · [`go-ruby-syndication`](https://github.com/go-ruby-syndication) · [`go-ruby-tiktok`](https://github.com/go-ruby-tiktok)
+| Organisation | Intended for |
+| --- | --- |
+| [`go-graphdrawing`](https://github.com/go-graphdrawing) | Graph-drawing algorithms — Sugiyama layering, force-directed placement, trees. Measured and deliberately deferred: pgf's graphdrawing is used by 5 documents in a 10,025-talk corpus. |
+| [`go-grub`](https://github.com/go-grub) | Superseded in practice by go-bootloaders/grub. |
+| [`go-quake2`](https://github.com/go-quake2) | A Quake II engine, after go-quake1. |
+| [`go-quake3`](https://github.com/go-quake3) | A Quake III engine. |
+| [`go-sicp`](https://github.com/go-sicp) | Reserved. |
+| [`pocketdesk`](https://github.com/pocketdesk) | Reserved; carries brand and site repositories only. |
+| [`ssh-tools`](https://github.com/ssh-tools) | Reserved. |
+| [`configuration-management-tool`](https://github.com/configuration-management-tool) | Reserved; the working configuration-management stack is the go-puppet* family. |
+| [`go-ruby-atproto`](https://github.com/go-ruby-atproto) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+| [`go-ruby-birdsite`](https://github.com/go-ruby-birdsite) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+| [`go-ruby-hackernews`](https://github.com/go-ruby-hackernews) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+| [`go-ruby-instagram`](https://github.com/go-ruby-instagram) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+| [`go-ruby-mastodon`](https://github.com/go-ruby-mastodon) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+| [`go-ruby-newsgroups`](https://github.com/go-ruby-newsgroups) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+| [`go-ruby-syndication`](https://github.com/go-ruby-syndication) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+| [`go-ruby-tiktok`](https://github.com/go-ruby-tiktok) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
 
 ## Not in this map
 
-Two sibling stacks are deliberately **not** Go, and are not counted above:
-[`libfw`](https://github.com/libfw) (a stateful L3/L4 packet filter) and
-[`libhcl`](https://github.com/libhcl) (HCL and HCL2 parsers), both in C.
-Separately, a handful of organisations hold research-computing and OpenStack
-operations work in shell, HCL and Python rather than Go.
+| Organisation | What it is |
+| --- | --- |
+| [`libfw`](https://github.com/libfw) | A stateful L3/L4 packet filter, in C. |
+| [`libhcl`](https://github.com/libhcl) | HCL and HCL2 parsers, in C. |
+| [`jupytercloud-project`](https://github.com/jupytercloud-project) | JupyterHub on OpenStack — images, provisioners and infrastructure, mostly not Go. |
+| [`openstack-continuous-integration`](https://github.com/openstack-continuous-integration) | OpenStack CI images and provisioners (Dockerfile, HCL). |
+| [`openstack-terraform-modules`](https://github.com/openstack-terraform-modules) | Terraform modules for OpenStack (HCL). |
+| [`plmteam-mathrice`](https://github.com/plmteam-mathrice) | Esup-Pod deployment (JavaScript). |
+| [`resinfo-gt-cloud`](https://github.com/resinfo-gt-cloud) | RESINFO cloud working-group material (shell, Groovy). |
+| [`mash-installers`](https://github.com/mash-installers) | A service installer (shell). |
 
 ---
 
-Counts are the public repositories that hold code; brand, docs and landing
-repositories are excluded. BSD-3-Clause · brand assets in
-[go-desktop/brand](https://github.com/go-desktop/brand).
+Counts are the public repositories that hold code; `.github`, `brand`, `docs` and
+`<org>.github.io` are excluded. This file is generated by
+[`go-desktop/catalog`](https://github.com/go-desktop/catalog) from the live GitHub
+organisation list — edit `families.json` there, not this page. BSD-3-Clause · brand
+assets in [go-desktop/brand](https://github.com/go-desktop/brand).
