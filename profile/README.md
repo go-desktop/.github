@@ -294,11 +294,6 @@ a capability is the easiest way to believe a capability exists.
 | [`go-ruby-syndication`](https://github.com/go-ruby-syndication) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
 | [`go-ruby-tiktok`](https://github.com/go-ruby-tiktok) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
 
-## Not in this map
-
-| Organisation | What it is |
-| --- | --- |
-
 ---
 
 Counts are the public repositories that hold code; `.github`, `brand`, `docs` and
