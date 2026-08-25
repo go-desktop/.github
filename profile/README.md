@@ -2,7 +2,7 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 289 organisations, 571 public code repositories, no C anywhere.**
+**A map of one pure-Go ecosystem — 289 organisations, 589 public code repositories, no C anywhere.**
 
 This organisation holds no library. It holds the index — and the tool that
 generates it, so that no number on any of these pages is typed by hand.
@@ -37,13 +37,13 @@ One widget toolkit, every surface it paints on, and the platform plumbing a real
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-widgets`](https://github.com/go-widgets) | 16 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell. |
-| [`go-freedesktop`](https://github.com/go-freedesktop) | 8 | freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service. |
+| [`go-widgets`](https://github.com/go-widgets) | 18 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell. |
+| [`go-freedesktop`](https://github.com/go-freedesktop) | 10 | freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end. |
 | [`go-iconoir`](https://github.com/go-iconoir) | 1 | The whole Iconoir set — 1,671 SVGs embedded and rendered to anti-aliased coverage masks for the toolkit painter. |
 | [`go-thumbnail`](https://github.com/go-thumbnail) | 1 | The freedesktop Thumbnail Managing Standard cache. |
 | [`go-keyring`](https://github.com/go-keyring) | 1 | One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec. |
-| [`go-macos`](https://github.com/go-macos) | 6 | The macOS foundation: the shared Objective-C runtime bridge over purego, plus Keychain and notifications. |
-| [`go-mswin`](https://github.com/go-mswin) | 2 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc. |
+| [`go-macos`](https://github.com/go-macos) | 10 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain, notifications, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
+| [`go-mswin`](https://github.com/go-mswin) | 3 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
 | [`wasmdesk`](https://github.com/wasmdesk) | 7 | A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite. |
 
 ## Graphics, images & media
@@ -52,12 +52,12 @@ The 2D socle everything above draws through, and the pixels and frames it moves.
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-gfx`](https://github.com/go-gfx) | 1 | The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap. |
+| [`go-gfx`](https://github.com/go-gfx) | 2 | The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap. |
 | [`go-images`](https://github.com/go-images) | 1 | Image processing at scikit-image scope. |
 | [`go-avkit`](https://github.com/go-avkit) | 1 | An audio/video toolkit — MP4/ISO-BMFF and Matroska/WebM demuxing. |
 | [`go-streamkit`](https://github.com/go-streamkit) | 1 | Site-agnostic transport for streaming media: a retrying, rate-limited HTTP client, an HLS parser and an MPEG-DASH manifest reader. |
 | [`go-extractors`](https://github.com/go-extractors) | 1 | A plugin framework for media extractors — standalone plugin executables answer what is at a URL and what can be downloaded from it. |
-| [`go-xrkit`](https://github.com/go-xrkit) | 2 | Immersive video on XR glasses: head orientation, stereo frame packing, flat, equirectangular and fisheye projection, and a player that drives the glasses' own display. |
+| [`go-xrkit`](https://github.com/go-xrkit) | 4 | XR glasses: head orientation, stereo frame packing, flat, equirectangular and fisheye projection, a 360° screen ribbon, a graded catalogue of what each headset can show — plus a player, a virtual desktop on the ribbon, and Android capture. |
 
 ## Documents, typesetting & fonts
 
@@ -69,7 +69,7 @@ Turning a document into pages: fonts, breaking, shaping, TeX, PDF, and one rich-
 | [`go-typeset`](https://github.com/go-typeset) | 3 | The typesetting algorithms on their own, with no TeX vocabulary in the API: Knuth-Plass line breaking, Liang hyphenation, the Unicode bidirectional algorithm. |
 | [`go-opentype`](https://github.com/go-opentype) | 3 | The font format: TrueType/OpenType parsing and anti-aliased rasterisation, a HarfBuzz-lite complex-text shaper, and legible fonts ready to import. |
 | [`go-synctex`](https://github.com/go-synctex) | 1 | TeX's SyncTeX — the source-to-PDF correspondence, both ways. |
-| [`go-pdfkit`](https://github.com/go-pdfkit) | 1 | A PDF 1.7 writer: font subsetting and embedding for TrueType and CFF, graphics, images, shaped text. |
+| [`go-pdfkit`](https://github.com/go-pdfkit) | 7 | A PDF 1.7 writer: font subsetting and embedding for TrueType and CFF, graphics, images, shaped text. |
 | [`go-richdoc`](https://github.com/go-richdoc) | 3 | One rich-document model, and the converters that read and write it. |
 | [`go-odf`](https://github.com/go-odf) | 1 | OpenDocument Text, in and out of the richdoc model. |
 | [`go-rtf`](https://github.com/go-rtf) | 1 | RTF, in and out of the richdoc model. |
