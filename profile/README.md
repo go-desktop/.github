@@ -2,7 +2,7 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 289 organisations, 589 public code repositories, no C anywhere.**
+**A map of one pure-Go ecosystem — 291 organisations, 610 public code repositories, no C anywhere.**
 
 This organisation holds no library. It holds the index — and the tool that
 generates it, so that no number on any of these pages is typed by hand.
@@ -40,9 +40,10 @@ One widget toolkit, every surface it paints on, and the platform plumbing a real
 | [`go-widgets`](https://github.com/go-widgets) | 18 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell. |
 | [`go-freedesktop`](https://github.com/go-freedesktop) | 10 | freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end. |
 | [`go-iconoir`](https://github.com/go-iconoir) | 1 | The whole Iconoir set — 1,671 SVGs embedded and rendered to anti-aliased coverage masks for the toolkit painter. |
+| [`go-icons`](https://github.com/go-icons) | 6 | Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five. Distinct from go-iconoir, which rasterises Iconoir to coverage masks for the painter: take this one for the SVG, that one to draw a button glyph. |
 | [`go-thumbnail`](https://github.com/go-thumbnail) | 1 | The freedesktop Thumbnail Managing Standard cache. |
 | [`go-keyring`](https://github.com/go-keyring) | 1 | One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec. |
-| [`go-macos`](https://github.com/go-macos) | 10 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain, notifications, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
+| [`go-macos`](https://github.com/go-macos) | 20 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
 | [`go-mswin`](https://github.com/go-mswin) | 3 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
 | [`wasmdesk`](https://github.com/wasmdesk) | 7 | A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite. |
 
@@ -69,8 +70,9 @@ Turning a document into pages: fonts, breaking, shaping, TeX, PDF, and one rich-
 | [`go-typeset`](https://github.com/go-typeset) | 3 | The typesetting algorithms on their own, with no TeX vocabulary in the API: Knuth-Plass line breaking, Liang hyphenation, the Unicode bidirectional algorithm. |
 | [`go-opentype`](https://github.com/go-opentype) | 3 | The font format: TrueType/OpenType parsing and anti-aliased rasterisation, a HarfBuzz-lite complex-text shaper, and legible fonts ready to import. |
 | [`go-synctex`](https://github.com/go-synctex) | 1 | TeX's SyncTeX — the source-to-PDF correspondence, both ways. |
-| [`go-pdfkit`](https://github.com/go-pdfkit) | 7 | A PDF 1.7 writer: font subsetting and embedding for TrueType and CFF, graphics, images, shaped text. |
-| [`go-richdoc`](https://github.com/go-richdoc) | 3 | One rich-document model, and the converters that read and write it. |
+| [`go-pdfkit`](https://github.com/go-pdfkit) | 11 | The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it. |
+| [`go-docutils`](https://github.com/go-docutils) | 1 | A reStructuredText engine — docutils' core in pure Go: the parser and the doctree it produces, which the LaTeX and PDF path is built on. |
+| [`go-richdoc`](https://github.com/go-richdoc) | 4 | One rich-document model, and the converters that read and write it — Markdown, LaTeX and reStructuredText. |
 | [`go-odf`](https://github.com/go-odf) | 1 | OpenDocument Text, in and out of the richdoc model. |
 | [`go-rtf`](https://github.com/go-rtf) | 1 | RTF, in and out of the richdoc model. |
 
