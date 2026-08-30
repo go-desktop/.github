@@ -2,7 +2,7 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 291 organisations, 610 public code repositories, no C anywhere.**
+**A map of one pure-Go ecosystem — 290 organisations, 609 public code repositories, no C anywhere.**
 
 This organisation holds no library. It holds the index — and the tool that
 generates it, so that no number on any of these pages is typed by hand.
@@ -39,8 +39,7 @@ One widget toolkit, every surface it paints on, and the platform plumbing a real
 | --- | --- | --- |
 | [`go-widgets`](https://github.com/go-widgets) | 18 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell. |
 | [`go-freedesktop`](https://github.com/go-freedesktop) | 10 | freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end. |
-| [`go-iconoir`](https://github.com/go-iconoir) | 1 | The whole Iconoir set — 1,671 SVGs embedded and rendered to anti-aliased coverage masks for the toolkit painter. |
-| [`go-icons`](https://github.com/go-icons) | 6 | Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five. Distinct from go-iconoir, which rasterises Iconoir to coverage masks for the painter: take this one for the SVG, that one to draw a button glyph. |
+| [`go-icons`](https://github.com/go-icons) | 6 | Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package. This pair replaced the archived go-iconoir. |
 | [`go-thumbnail`](https://github.com/go-thumbnail) | 1 | The freedesktop Thumbnail Managing Standard cache. |
 | [`go-keyring`](https://github.com/go-keyring) | 1 | One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec. |
 | [`go-macos`](https://github.com/go-macos) | 20 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
@@ -295,6 +294,16 @@ a capability is the easiest way to believe a capability exists.
 | [`go-ruby-newsgroups`](https://github.com/go-ruby-newsgroups) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
 | [`go-ruby-syndication`](https://github.com/go-ruby-syndication) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
 | [`go-ruby-tiktok`](https://github.com/go-ruby-tiktok) | A Ruby-facing wrapper for a social or feed client that already exists in Go. |
+
+## Archived, and where it went
+
+These organisations were built and are now archived. They are listed, rather
+than removed, because a reader who knows the old name has to be able to find
+the new one. They are counted nowhere.
+
+| Organisation | Replaced by |
+| --- | --- |
+| [`go-iconoir`](https://github.com/go-iconoir) | [`go-icons/iconoir`](https://github.com/go-icons/iconoir) for the icon data, and [`go-gfx/gfx`](https://github.com/go-gfx/gfx)'s `svg` package for turning it into pixels. Splitting the two is what made the rasteriser reusable for every other pack rather than only for Iconoir. |
 
 ---
 
