@@ -2,7 +2,7 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 290 organisations, 610 public code repositories, no C anywhere.**
+**A map of one pure-Go ecosystem — 290 organisations, 618 public code repositories, no C anywhere.**
 
 This organisation holds no library. It holds the index — and the tool that
 generates it, so that no number on any of these pages is typed by hand.
@@ -37,12 +37,12 @@ One widget toolkit, every surface it paints on, and the platform plumbing a real
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-widgets`](https://github.com/go-widgets) | 18 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell. |
+| [`go-widgets`](https://github.com/go-widgets) | 19 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, application lifecycle with a system tray, a real Android APK, and a desktop shell. |
 | [`go-freedesktop`](https://github.com/go-freedesktop) | 10 | freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end. |
 | [`go-icons`](https://github.com/go-icons) | 6 | Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package. |
 | [`go-thumbnail`](https://github.com/go-thumbnail) | 1 | The freedesktop Thumbnail Managing Standard cache. |
 | [`go-keyring`](https://github.com/go-keyring) | 1 | One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec. |
-| [`go-macos`](https://github.com/go-macos) | 21 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
+| [`go-macos`](https://github.com/go-macos) | 23 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
 | [`go-mswin`](https://github.com/go-mswin) | 3 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
 | [`wasmdesk`](https://github.com/wasmdesk) | 7 | A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite. |
 
@@ -69,8 +69,8 @@ Turning a document into pages: fonts, breaking, shaping, TeX, PDF, and one rich-
 | [`go-typeset`](https://github.com/go-typeset) | 3 | The typesetting algorithms on their own, with no TeX vocabulary in the API: Knuth-Plass line breaking, Liang hyphenation, the Unicode bidirectional algorithm. |
 | [`go-opentype`](https://github.com/go-opentype) | 3 | The font format: TrueType/OpenType parsing and anti-aliased rasterisation, a HarfBuzz-lite complex-text shaper, and legible fonts ready to import. |
 | [`go-synctex`](https://github.com/go-synctex) | 1 | TeX's SyncTeX — the source-to-PDF correspondence, both ways. |
-| [`go-pdfkit`](https://github.com/go-pdfkit) | 11 | The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it. |
-| [`go-docutils`](https://github.com/go-docutils) | 1 | A reStructuredText engine — docutils' core in pure Go: the parser and the doctree it produces, which the LaTeX and PDF path is built on. |
+| [`go-pdfkit`](https://github.com/go-pdfkit) | 12 | The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it. |
+| [`go-docutils`](https://github.com/go-docutils) | 2 | reStructuredText both ways: docutils' core in pure Go — the parser and the doctree the LaTeX and PDF path is built on — and an extractor that renders a Go package's own API documentation as reST to feed it. |
 | [`go-richdoc`](https://github.com/go-richdoc) | 4 | One rich-document model, and the converters that read and write it — Markdown, LaTeX and reStructuredText. |
 | [`go-odf`](https://github.com/go-odf) | 1 | OpenDocument Text, in and out of the richdoc model. |
 | [`go-rtf`](https://github.com/go-rtf) | 1 | RTF, in and out of the richdoc model. |
@@ -151,7 +151,7 @@ From a block device to a mounted filesystem, without a C library anywhere.
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
 | [`go-volumes`](https://github.com/go-volumes) | 9 | The block layer — a device contract, NBD, pools, replicas, S3, an OCI image as a block device, GPT and MBR, and parse-hardening guards. |
-| [`go-filesystems`](https://github.com/go-filesystems) | 17 | Filesystem-format drivers — ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, iso9660, squashfs and more — plus UEFI variable management and a format prober. |
+| [`go-filesystems`](https://github.com/go-filesystems) | 20 | Filesystem-format drivers — ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, iso9660, squashfs and more — plus UEFI variable management and a format prober. And the other direction: NFSv3, SFTP and WebDAV servers that export any of them, so an image can be mounted by the host rather than only read by a program. |
 | [`go-diskimages`](https://github.com/go-diskimages) | 6 | Disk-image formats: qcow2, raw, dmg, tart-oci, in either direction. |
 | [`go-fsctl`](https://github.com/go-fsctl) | 6 | Linux kernel ioctl wrappers — zfs, btrfs, loop, device-mapper, block, copy-on-write clones. |
 | [`go-fde`](https://github.com/go-fde) | 4 | Full-disk encryption: LUKS, APFS, and the plumbing that opens them. |
