@@ -2,7 +2,7 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 292 organisations, 621 public code repositories, no C anywhere.**
+**A map of one pure-Go ecosystem — 293 organisations, 635 public code repositories, no C anywhere.**
 
 This organisation holds no library. It holds the index — and the tool that
 generates it, so that no number on any of these pages is typed by hand.
@@ -43,7 +43,7 @@ One widget toolkit, every surface it paints on, and the platform plumbing a real
 | [`go-icons`](https://github.com/go-icons) | 6 | Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package. |
 | [`go-thumbnail`](https://github.com/go-thumbnail) | 1 | The freedesktop Thumbnail Managing Standard cache. |
 | [`go-keyring`](https://github.com/go-keyring) | 1 | One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec. |
-| [`go-macos`](https://github.com/go-macos) | 24 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
+| [`go-macos`](https://github.com/go-macos) | 26 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
 | [`go-mswin`](https://github.com/go-mswin) | 3 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
 | [`wasmdesk`](https://github.com/wasmdesk) | 7 | A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite. |
 
@@ -54,7 +54,7 @@ The 2D socle everything above draws through, and the pixels and frames it moves.
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
 | [`go-gfx`](https://github.com/go-gfx) | 2 | The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap. |
-| [`go-images`](https://github.com/go-images) | 1 | Image processing at scikit-image scope. |
+| [`go-images`](https://github.com/go-images) | 2 | Image processing at scikit-image scope. |
 | [`go-avkit`](https://github.com/go-avkit) | 1 | An audio/video toolkit — MP4/ISO-BMFF and Matroska/WebM demuxing. |
 | [`go-streamkit`](https://github.com/go-streamkit) | 1 | Site-agnostic transport for streaming media: a retrying, rate-limited HTTP client, an HLS parser and an MPEG-DASH manifest reader. |
 | [`go-extractors`](https://github.com/go-extractors) | 1 | A plugin framework for media extractors — standalone plugin executables answer what is at a URL and what can be downloaded from it. |
@@ -99,7 +99,7 @@ Rendering a page without a browser, and carrying gRPC where gRPC does not go.
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-webengine`](https://github.com/go-webengine) | 2 | A headless web engine: HTML and CSS laid out and painted to an image, with no Chromium — plus a service that streams those frames to a thin client. |
+| [`go-webengine`](https://github.com/go-webengine) | 3 | A headless web engine: HTML and CSS laid out and painted to an image, with no Chromium — plus a service that streams those frames to a thin client. |
 | [`go-browserhttp`](https://github.com/go-browserhttp) | 2 | An http.Client that presents a Chrome TLS fingerprint. |
 | [`go-lsp-bridge`](https://github.com/go-lsp-bridge) | 1 | A WebSocket-to-stdio bridge for JSON-RPC language-server traffic. |
 | [`grpc-transports`](https://github.com/grpc-transports) | 5 | gRPC where it is not supposed to go: over SSH, WireGuard, vsock, WebSocket and WebRTC. |
@@ -198,7 +198,7 @@ microVMs, guest drivers, supervision, coordination and the network between them.
 
 ## Configuration management
 
-The Puppet stack, in Go, without a Ruby runtime.
+The Puppet and Ansible stacks, in Go, without a Ruby or Python runtime.
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
@@ -211,6 +211,7 @@ The Puppet stack, in Go, without a Ruby runtime.
 | [`go-eyaml`](https://github.com/go-eyaml) | 1 | eyaml — encrypted values inside Hiera data. |
 | [`go-hocon`](https://github.com/go-hocon) | 1 | HOCON configuration. |
 | [`go-augeas`](https://github.com/go-augeas) | 1 | The Augeas engine: a config tree, path expressions and lenses. |
+| [`go-ansible`](https://github.com/go-ansible) | 10 | Ansible: inventory, variable precedence, Jinja2-compatible templating, connection and become plugins, the module protocol, and the playbook engine. |
 
 ## News, social & feeds
 
