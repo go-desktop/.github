@@ -2,7 +2,7 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 294 organisations, 637 public code repositories, no C anywhere.**
+**A map of one pure-Go ecosystem — 297 organisations, 651 public code repositories, no C anywhere.**
 
 This organisation holds no library. It holds the index — and the tool that
 generates it, so that no number on any of these pages is typed by hand.
@@ -43,9 +43,12 @@ One widget toolkit, every surface it paints on, and the platform plumbing a real
 | [`go-icons`](https://github.com/go-icons) | 6 | Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package. |
 | [`go-thumbnail`](https://github.com/go-thumbnail) | 1 | The freedesktop Thumbnail Managing Standard cache. |
 | [`go-keyring`](https://github.com/go-keyring) | 1 | One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec. |
-| [`go-macos`](https://github.com/go-macos) | 26 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
-| [`go-mswin`](https://github.com/go-mswin) | 3 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
+| [`go-macos`](https://github.com/go-macos) | 29 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
+| [`go-mswin`](https://github.com/go-mswin) | 5 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
 | [`wasmdesk`](https://github.com/wasmdesk) | 7 | A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite. |
+| [`go-gnulinux`](https://github.com/go-gnulinux) | 2 | Linux's system interfaces in pure Go: hidraw and the authentication factors built on it — the Linux third of the platform layer, beside go-macos and go-mswin. |
+| [`go-authn`](https://github.com/go-authn) | 3 | Proving a person is present: the FIDO client-to-authenticator protocol spoken to a security key on any OS, and the rule that decides whether enough factors answered. |
+| [`go-aiquota`](https://github.com/go-aiquota) | 4 | A menu-bar application on the toolkit: AI usage quotas across several accounts, read through one go-plugin contract with a plugin per provider. |
 
 ## Graphics, images & media
 
@@ -70,7 +73,7 @@ Turning a document into pages: fonts, breaking, shaping, TeX, PDF, and one rich-
 | [`go-typeset`](https://github.com/go-typeset) | 3 | The typesetting algorithms on their own, with no TeX vocabulary in the API: Knuth-Plass line breaking, Liang hyphenation, the Unicode bidirectional algorithm. |
 | [`go-opentype`](https://github.com/go-opentype) | 3 | The font format: TrueType/OpenType parsing and anti-aliased rasterisation, a HarfBuzz-lite complex-text shaper, and legible fonts ready to import. |
 | [`go-synctex`](https://github.com/go-synctex) | 1 | TeX's SyncTeX — the source-to-PDF correspondence, both ways. |
-| [`go-pdfkit`](https://github.com/go-pdfkit) | 12 | The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it. |
+| [`go-pdfkit`](https://github.com/go-pdfkit) | 13 | The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it. |
 | [`go-docutils`](https://github.com/go-docutils) | 2 | reStructuredText both ways: docutils' core in pure Go — the parser and the doctree the LaTeX and PDF path is built on — and an extractor that renders a Go package's own API documentation as reST to feed it. |
 | [`go-richdoc`](https://github.com/go-richdoc) | 4 | One rich-document model, and the converters that read and write it — Markdown, LaTeX and reStructuredText. |
 | [`go-odf`](https://github.com/go-odf) | 1 | OpenDocument Text, in and out of the richdoc model. |
@@ -211,7 +214,7 @@ The Puppet and Ansible stacks, in Go, without a Ruby or Python runtime.
 | [`go-eyaml`](https://github.com/go-eyaml) | 1 | eyaml — encrypted values inside Hiera data. |
 | [`go-hocon`](https://github.com/go-hocon) | 1 | HOCON configuration. |
 | [`go-augeas`](https://github.com/go-augeas) | 1 | The Augeas engine: a config tree, path expressions and lenses. |
-| [`go-ansible`](https://github.com/go-ansible) | 10 | Ansible: inventory, variable precedence, Jinja2-compatible templating, connection and become plugins, the module protocol, and the playbook engine. |
+| [`go-ansible`](https://github.com/go-ansible) | 9 | Ansible: inventory, variable precedence, Jinja2-compatible templating, connection and become plugins, the module protocol, and the playbook engine. |
 | [`go-remoteexec`](https://github.com/go-remoteexec) | 1 | The layer both orchestrators run commands through: local, SSH and WinRM connections with sudo, su and doas escalation. |
 
 ## News, social & feeds
