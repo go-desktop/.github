@@ -2,7 +2,7 @@
 
 # go-desktop
 
-**A map of one pure-Go ecosystem — 316 organisations, 755 public code repositories, no C anywhere.**
+**A map of one pure-Go ecosystem — 324 organisations, 812 public code repositories, no C anywhere.**
 
 This organisation holds no library. It holds the index — and the tool that
 generates it, so that no number on any of these pages is typed by hand.
@@ -38,18 +38,18 @@ One widget toolkit, every surface it paints on, and the platform plumbing a real
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
 | [`go-gtk`](https://github.com/go-gtk) | 1 | GTK4 driven from pure Go over purego, CGO=0 — the Linux native-toolkit bridge for go-widgets, sibling of go-macos/objc. |
-| [`go-widgets`](https://github.com/go-widgets) | 19 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, application lifecycle with a system tray, a real Android APK, and a desktop shell. |
+| [`go-widgets`](https://github.com/go-widgets) | 24 | The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, application lifecycle with a system tray, a real Android APK, and a desktop shell. |
 | [`go-freedesktop`](https://github.com/go-freedesktop) | 10 | freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end. |
 | [`go-icons`](https://github.com/go-icons) | 7 | Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package. |
 | [`go-appdirs`](https://github.com/go-appdirs) | 1 | Where a file belongs on the host: the durable per-user directory a program should write to, chosen per platform, for artefacts that must outlive a run and must never land inside a repository. |
 | [`go-thumbnail`](https://github.com/go-thumbnail) | 1 | The freedesktop Thumbnail Managing Standard cache. |
 | [`go-keyring`](https://github.com/go-keyring) | 1 | One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec. |
 | [`go-macos`](https://github.com/go-macos) | 31 | The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto. |
-| [`go-mswin`](https://github.com/go-mswin) | 5 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
+| [`go-mswin`](https://github.com/go-mswin) | 6 | The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them. |
 | [`wasmdesk`](https://github.com/wasmdesk) | 7 | A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite. |
 | [`go-gnulinux`](https://github.com/go-gnulinux) | 2 | Linux's system interfaces in pure Go: hidraw and the authentication factors built on it — the Linux third of the platform layer, beside go-macos and go-mswin. |
-| [`go-authn`](https://github.com/go-authn) | 18 | Who somebody is, and what proves it — a federation's worth of identity in pure Go with no cgo: one directory model over a database, a file or LDAP, and the LDAP server that publishes it; Kerberos both ways, issuing tickets from that directory and accepting them where gokrb5 will not build; SAML as a service provider in RENATER or eduGAIN, and an OIDC provider in front of such a federation; the relying-party and token-verification halves of OpenID Connect; SSH user certificates on the GÉANT/EuroHPC CA profile with revocation lists distributed signed and expiring, beside X.509 CRLs; ACME and on-disk sources for a daemon's own TLS certificate; and the factors a policy asks for — a security key over FIDO CTAP, TOTP, WireGuard keys — with the rule that decides whether enough of them answered. |
-| [`go-aiquota`](https://github.com/go-aiquota) | 4 | A menu-bar application on the toolkit: AI usage quotas across several accounts, read through one go-plugin contract with a plugin per provider. |
+| [`go-authn`](https://github.com/go-authn) | 19 | Who somebody is, and what proves it — a federation's worth of identity in pure Go with no cgo: one directory model over a database, a file or LDAP, and the LDAP server that publishes it; Kerberos both ways, issuing tickets from that directory and accepting them where gokrb5 will not build; SAML as a service provider in RENATER or eduGAIN, and an OIDC provider in front of such a federation; the relying-party and token-verification halves of OpenID Connect; SSH user certificates on the GÉANT/EuroHPC CA profile with revocation lists distributed signed and expiring, beside X.509 CRLs; ACME and on-disk sources for a daemon's own TLS certificate; and the factors a policy asks for — a security key over FIDO CTAP, TOTP, WireGuard keys — with the rule that decides whether enough of them answered. |
+| [`go-aiquota`](https://github.com/go-aiquota) | 5 | A menu-bar application on the toolkit: AI usage quotas across several accounts, read through one go-plugin contract with a plugin per provider. |
 
 ## Graphics, images & media
 
@@ -57,9 +57,9 @@ The 2D socle everything above draws through, and the pixels and frames it moves.
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-gfx`](https://github.com/go-gfx) | 3 | The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap. |
-| [`go-images`](https://github.com/go-images) | 7 | Image processing at scikit-image scope, plus the decoders the standard library does not have or does differently: Photoshop PSD composites, and forks of image/gif, image/jpeg and image/png that upsample four-component chroma the way libjpeg does and can report what a truncated stream did decode, so a half-arrived picture still shows. And one that is not processing at all: depth from a single photograph, and the second eye synthesised from it. |
-| [`go-avkit`](https://github.com/go-avkit) | 7 | An audio/video toolkit: MP4/ISO-BMFF, Matroska/WebM and MPEG-TS onto one model, demuxed and muxed — and under it the bitstreams themselves, H.264 and H.265 read down to clause 8.2's picture order counts, VP8 and VP9, over the primitives they share rather than once per codec: RBSP and Exp-Golomb bit reading, NAL framing, and the boolean arithmetic decoder VP8 and VP9 have in common. |
+| [`go-gfx`](https://github.com/go-gfx) | 7 | The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap. |
+| [`go-images`](https://github.com/go-images) | 8 | Image processing at scikit-image scope, plus the decoders the standard library does not have or does differently: Photoshop PSD composites, and forks of image/gif, image/jpeg and image/png that upsample four-component chroma the way libjpeg does and can report what a truncated stream did decode, so a half-arrived picture still shows. And one that is not processing at all: depth from a single photograph, and the second eye synthesised from it. |
+| [`go-avkit`](https://github.com/go-avkit) | 8 | An audio/video toolkit: MP4/ISO-BMFF, Matroska/WebM and MPEG-TS onto one model, demuxed and muxed — and under it the bitstreams themselves, H.264 and H.265 read down to clause 8.2's picture order counts, VP8 and VP9, over the primitives they share rather than once per codec: RBSP and Exp-Golomb bit reading, NAL framing, and the boolean arithmetic decoder VP8 and VP9 have in common. |
 | [`go-streamkit`](https://github.com/go-streamkit) | 1 | Site-agnostic transport for streaming media: a retrying, rate-limited HTTP client, an HLS parser and an MPEG-DASH manifest reader. |
 | [`go-extractors`](https://github.com/go-extractors) | 1 | A plugin framework for media extractors — standalone plugin executables answer what is at a URL and what can be downloaded from it. |
 | [`go-xrkit`](https://github.com/go-xrkit) | 5 | XR glasses: head orientation, stereo frame packing, flat, equirectangular and fisheye projection, a 360° screen ribbon, a graded catalogue of what each headset can show — plus a player, a virtual desktop on the ribbon, and Android capture. |
@@ -77,13 +77,13 @@ Turning a document into pages: fonts, breaking, shaping, TeX, PDF, and one rich-
 | [`go-typeset`](https://github.com/go-typeset) | 3 | The typesetting algorithms on their own, with no TeX vocabulary in the API: Knuth-Plass line breaking, Liang hyphenation, the Unicode bidirectional algorithm. |
 | [`go-opentype`](https://github.com/go-opentype) | 3 | The font format: TrueType/OpenType parsing and anti-aliased rasterisation, a HarfBuzz-lite complex-text shaper, and legible fonts ready to import. |
 | [`go-synctex`](https://github.com/go-synctex) | 1 | TeX's SyncTeX — the source-to-PDF correspondence, both ways. |
-| [`go-pdfkit`](https://github.com/go-pdfkit) | 15 | The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it. |
+| [`go-pdfkit`](https://github.com/go-pdfkit) | 16 | The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it. |
 | [`go-docutils`](https://github.com/go-docutils) | 2 | reStructuredText both ways: docutils' core in pure Go — the parser and the doctree the LaTeX and PDF path is built on — and an extractor that renders a Go package's own API documentation as reST to feed it. |
 | [`go-richdoc`](https://github.com/go-richdoc) | 10 | One rich-document model, and everything that reads or writes it. Both directions for the markup people edit — Markdown, LaTeX, reStructuredText — and one direction for the formats people are handed: HTML and XHTML, EPUB 2 and 3, Kindle MOBI, FictionBook 2, RFC 5322 mail with its MIME parts, and CSV, JSON, XML or plain text. A format is added by writing one reader against that model, not by writing a converter to each of the others. |
 | [`go-odf`](https://github.com/go-odf) | 1 | OpenDocument Text, in and out of the richdoc model. |
 | [`go-rtf`](https://github.com/go-rtf) | 1 | RTF, in and out of the richdoc model. |
 | [`go-ooxml`](https://github.com/go-ooxml) | 2 | Word, Excel and PowerPoint into the richdoc model: one container — the Open Packaging Conventions, kept separate because docx, xlsx and pptx all sit on it — and three vocabularies above it. |
-| [`go-slides`](https://github.com/go-slides) | 2 | Marp-compatible slide decks, with Go template interpolation and slide kinds, and the VS Code extension that previews and exports them. |
+| [`go-slides`](https://github.com/go-slides) | 3 | Marp-compatible slide decks, with Go template interpolation and slide kinds, and the VS Code extension that previews and exports them. |
 
 ## Markup, templating & text
 
@@ -99,7 +99,7 @@ Reading and writing the formats documents arrive in, and the engines that scan t
 | [`go-mustache`](https://github.com/go-mustache) | 1 | Logic-less Mustache templating, spec-faithful. |
 | [`go-liquid`](https://github.com/go-liquid) | 1 | Shopify's Liquid template engine, gem-faithful. |
 | [`go-rouge`](https://github.com/go-rouge) | 1 | A Rouge/Pygments-class syntax highlighter — per-language lexers, token types, named themes. |
-| [`go-regexp`](https://github.com/go-regexp) | 1 | An Onigmo engine shaped like the standard library's regexp, with the lookaround and backreferences RE2 cannot do. |
+| [`go-regexp`](https://github.com/go-regexp) | 2 | An Onigmo engine shaped like the standard library's regexp, with the lookaround and backreferences RE2 cannot do. |
 | [`go-datetime`](https://github.com/go-datetime) | 1 | A lenient parser for the dates people actually write. |
 
 ## Web & transports
@@ -109,7 +109,7 @@ Rendering a page without a browser, and carrying gRPC where gRPC does not go.
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
 | [`go-webengine`](https://github.com/go-webengine) | 3 | A headless web engine: HTML and CSS laid out and painted to an image, with no Chromium — plus a service that streams those frames to a thin client. |
-| [`go-browserhttp`](https://github.com/go-browserhttp) | 2 | An http.Client that presents a Chrome TLS fingerprint. |
+| [`go-browserhttp`](https://github.com/go-browserhttp) | 3 | An http.Client that presents a Chrome TLS fingerprint. |
 | [`go-lsp-bridge`](https://github.com/go-lsp-bridge) | 1 | A WebSocket-to-stdio bridge for JSON-RPC language-server traffic. |
 | [`grpc-transports`](https://github.com/grpc-transports) | 6 | gRPC where it is not supposed to go: over SSH, WireGuard, vsock, WebSocket and WebRTC. |
 
@@ -122,13 +122,16 @@ Many people, one document, no server deciding who won.
 | [`go-crdt`](https://github.com/go-crdt) | 2 | A replicated text document and the service that carries it between the people editing it — the same merge logic on the server and in the browser, via js/wasm. |
 | [`go-yjs-relay`](https://github.com/go-yjs-relay) | 1 | A Yjs y-websocket relay hub, transport-agnostic. |
 
-## Ruby, in Go
+## Languages, in Go
 
-A Ruby virtual machine, its object model, and one organisation per gem it needs.
+Other languages' runtimes, written in pure Go so they embed in a Go program and compile to WebAssembly: a Ruby virtual machine with one organisation per gem it needs, and interpreters for Julia, R and C.
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
 | [`go-embedded-ruby`](https://github.com/go-embedded-ruby) | 1 | The Ruby virtual machine — YARV bytecode, the object model, the core library, and the rbgo interpreter. |
+| [`go-embedded-julia`](https://github.com/go-embedded-julia) | 1 | A Julia interpreter in pure Go, embeddable and WebAssembly-ready. |
+| [`go-embedded-r`](https://github.com/go-embedded-r) | 2 | An embeddable R interpreter in pure Go, checked against GNU R 4.6.2 by an oracle harness rather than against itself. |
+| [`go-embedded-c`](https://github.com/go-embedded-c) | 1 | C in pure Go: an oracle harness and a C-to-wasm32 compiler, so a notebook cell can hold C. |
 | [`go-composites`](https://github.com/go-composites) | 31 | Ruby's numeric tower, collections, time and dates as composition-oriented building blocks: Result-based, Null-Object, never nil. |
 | [`go-ruby-widgets`](https://github.com/go-ruby-widgets) | 3 | MVVM, widgets and a terminal toolkit, addressable from Ruby. |
 | [`go-vet-analyzers`](https://github.com/go-vet-analyzers) | 2 | go vet analyzers that make the ecosystem's invariants a compile-time matter. |
@@ -144,7 +147,7 @@ Getting the machine's width out of pure Go, on all six 64-bit targets — and th
 | [`go-ndarray`](https://github.com/go-ndarray) | 1 | A numpy-shaped n-dimensional array, with GEMM at vecLib parity. |
 | [`go-fft`](https://github.com/go-fft) | 1 | Fast Fourier transforms at numpy and scipy accuracy, without FFTW. |
 | [`go-numerics`](https://github.com/go-numerics) | 3 | The three pieces a numerical program reaches for after the array: special functions (gamma, beta, erf, Bessel, zeta), optimisation and root finding, and quadrature with ODE solvers including the stiff ones (Radau, BDF). |
-| [`go-statistics`](https://github.com/go-statistics) | 1 | Probability distributions, descriptive statistics and hypothesis tests, with accuracy measured against mpmath rather than against another Go implementation. |
+| [`go-statistics`](https://github.com/go-statistics) | 2 | Probability distributions, descriptive statistics and hypothesis tests, with accuracy measured against mpmath rather than against another Go implementation. |
 | [`go-approx`](https://github.com/go-approx) | 2 | Interpolation, splines and smoothing, and polynomials in the Chebyshev, Legendre, Hermite and Laguerre bases — validated against SciPy and NumPy. |
 | [`go-sparse`](https://github.com/go-sparse) | 1 | Sparse matrices, the orderings that make them tractable (RCM, AMD, COLAMD), and iterative solvers. |
 | [`go-dsp`](https://github.com/go-dsp) | 1 | Signal processing: filter design and filtering, spectral estimation, resampling and peak finding, following SciPy and MATLAB. |
@@ -152,7 +155,8 @@ Getting the machine's width out of pure Go, on all six 64-bit targets — and th
 | [`go-dataframe`](https://github.com/go-dataframe) | 1 | Labelled columnar tables: DataFrame and Series, CSV, Parquet and Arrow, group-by, joins and time series. |
 | [`go-plot`](https://github.com/go-plot) | 1 | Matplotlib-class figures for the stack above, to SVG, PNG and the screen, with real LaTeX in labels. |
 | [`go-notebook`](https://github.com/go-notebook) | 2 | Notebooks over that stack: a reactive compiled kernel that keeps its values and orders cells by what they use, and a browser playground that interprets the cells in WebAssembly while the libraries they call stay compiled. |
-| [`go-scikit`](https://github.com/go-scikit) | 2 | The parity programme for the stack as a whole — an inventory, a bibliography and a measured status against MATLAB and Mathematica — plus its Ruby bindings. |
+| [`go-scikit`](https://github.com/go-scikit) | 3 | The parity programme for the stack as a whole — an inventory, a bibliography and a measured status against MATLAB and Mathematica — plus its Ruby bindings. |
+| [`go-geometry`](https://github.com/go-geometry) | 7 | Computational geometry ported from SciPy and Qhull: robust predicates after Shewchuk, Delaunay and Voronoi, convex hulls, k-d trees, every scipy.spatial.distance metric, and rotations with Slerp. |
 
 ## Compression, delta & erasure
 
@@ -160,7 +164,7 @@ Making bytes smaller, sending only what changed, and surviving what is lost.
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-compressions`](https://github.com/go-compressions) | 13 | The codecs and the halves of them that are missing elsewhere: LZFSE, LZ4 and DEFLATE wire-compatible with compress/flate both ways, a bzip2 encoder the standard library does not have, and readers for the formats it never grew — .Z, lzip, LZO1X — plus BLAKE3 and b3sum, and the CLIs that go with them. Correctness is judged against the thing itself: the official BLAKE3 vectors, compress/bzip2, and macOS's own libcompression asked what the bytes should be. |
+| [`go-compressions`](https://github.com/go-compressions) | 14 | The codecs and the halves of them that are missing elsewhere: LZFSE, LZ4 and DEFLATE wire-compatible with compress/flate both ways, a bzip2 encoder the standard library does not have, and readers for the formats it never grew — .Z, lzip, LZO1X — plus BLAKE3 and b3sum, and the CLIs that go with them. Correctness is judged against the thing itself: the official BLAKE3 vectors, compress/bzip2, and macOS's own libcompression asked what the bytes should be. |
 | [`go-deltasync`](https://github.com/go-deltasync) | 6 | Delta transfer: zsync2, rdiff, zchunk, vcdiff, bita — and the one content-defined chunker they all import. |
 | [`go-erasure`](https://github.com/go-erasure) | 2 | Erasure coding: Reed-Solomon over GF(2^16), and the Mojette transform. |
 
@@ -171,12 +175,12 @@ From a block device to a mounted filesystem, without a C library anywhere.
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
 | [`go-volumes`](https://github.com/go-volumes) | 9 | The block layer — a device contract, NBD, pools, replicas, S3, an OCI image as a block device, GPT and MBR, and parse-hardening guards. |
-| [`go-filesystems`](https://github.com/go-filesystems) | 34 | One Filesystem interface, and everything that can sit on either side of it. Underneath, the formats: ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, ffs, ufs, hfsplus, iso9660, squashfs, UEFI variables, a blkid-style prober — and archives read as filesystems rather than unpacked, cab, cpio, rar, rpm, 7z (which also writes), xar and WARC, with one extractor that sniffs the format from the bytes and follows multi-volume sets. Above it, the servers that export any of them — NFSv3, SMB2, SFTP, WebDAV and an S3 object API — so an image is mounted by the host instead of only read by a program. And between the two: a host directory confined with os.Root, a read-only filesystem made writable through a spool, and the same filesystem served across a connection. |
+| [`go-filesystems`](https://github.com/go-filesystems) | 37 | One Filesystem interface, and everything that can sit on either side of it. Underneath, the formats: ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, ffs, ufs, hfsplus, iso9660, squashfs, UEFI variables, a blkid-style prober — and archives read as filesystems rather than unpacked, cab, cpio, rar, rpm, 7z (which also writes), xar and WARC, with one extractor that sniffs the format from the bytes and follows multi-volume sets. Above it, the servers that export any of them — NFSv3, SMB2, SFTP, WebDAV and an S3 object API — so an image is mounted by the host instead of only read by a program. And between the two: a host directory confined with os.Root, a read-only filesystem made writable through a spool, and the same filesystem served across a connection. |
 | [`go-diskimages`](https://github.com/go-diskimages) | 6 | Disk-image formats: qcow2, raw, dmg, tart-oci, in either direction. |
 | [`go-fileshare`](https://github.com/go-fileshare) | 4 | The product go-filesystems' servers make possible: one configuration and one binary sharing a disk image over SMB, NFS, WebDAV and SFTP, with an OIDC portal, per-server tokens, a file explorer and an admin console across many servers. |
 | [`go-fsctl`](https://github.com/go-fsctl) | 7 | Linux kernel ioctl wrappers — zfs, btrfs, loop, device-mapper, block, copy-on-write clones. |
-| [`go-fde`](https://github.com/go-fde) | 4 | Full-disk encryption: LUKS, APFS, and the plumbing that opens them. |
-| [`go-encryptions`](https://github.com/go-encryptions) | 4 | The modes underneath: CCM, XTS, ZFS crypto. |
+| [`go-fde`](https://github.com/go-fde) | 6 | Full-disk encryption: LUKS, APFS, and the plumbing that opens them. |
+| [`go-encryptions`](https://github.com/go-encryptions) | 5 | The modes underneath: CCM, XTS, ZFS crypto. |
 
 ## Firmware, boot & trust
 
@@ -189,6 +193,7 @@ What runs before the kernel, and how you prove what ran.
 | [`go-bootloaders`](https://github.com/go-bootloaders) | 2 | GRUB and systemd-boot tooling, composed on the storage, UEFI and TPM stacks rather than reimplementing them. |
 | [`cloud-boot`](https://github.com/cloud-boot) | 11 | Booting the machine: a TamaGo UEFI payload, a pure-UEFI loader that finds the distro kernel at runtime, a unified kernel image, an init, kernels, ISOs, a virtio-net driver, SEV-SNP attestation, and Windows boot-manager test infrastructure. Two of its repositories are neither bootloader nor kernel but the TinyGo runtime files without which GOARCH=riscv64 and GOARCH=loong64 cannot produce a baremetal UEFI binary at all — the prerequisite, kept where it is needed rather than waited on upstream. |
 | [`nano-container-linux`](https://github.com/nano-container-linux) | 7 | A minimal container host — OCI initrd and PXE boot, a DNS daemon, an OpenPubKey agent. |
+| [`go-redfish`](https://github.com/go-redfish) | 1 | A self-contained client for the DMTF Redfish API of a server's BMC, reading what a node draws out of band. |
 
 ## Packaging & supply chain
 
@@ -196,7 +201,7 @@ Building every dependency from source, signing it, and saying where it came from
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-pkgx`](https://github.com/go-pkgx) | 8 | A pure-Go pkgx: the package manager, the bottle installer, the bk recipe builder, and the CI factory that publishes signed bottles. |
+| [`go-zpkg`](https://github.com/go-zpkg) | 8 | A pure-Go package manager: the installer, the bottle builder, the recipe builder, and the CI factory that publishes signed bottles. Formerly go-pkgx; the organisation was renamed and its repositories transferred, so `pkgx` became `zpkgx` and the store moved from ~/.pkgx to ~/.zpkg. |
 | [`go-attest`](https://github.com/go-attest) | 2 | SPDX and CycloneDX SBOMs, SLSA provenance, and Ed25519 signing that is minisign- and cosign-interoperable from one keypair. |
 | [`go-versions`](https://github.com/go-versions) | 1 | Loose, pkgx-compatible semantic versions and ranges, CalVer included. |
 | [`go-gitsafe`](https://github.com/go-gitsafe) | 1 | Guards on what leaves a machine: a global git hook that refuses a credential in a remote URL and a write to the branch pull requests land on, a credential helper that never lets a token reach a command line, and a scope checker that reads a token's powers without printing it. |
@@ -208,13 +213,30 @@ microVMs, guest drivers, supervision, coordination and the network between them.
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
 | [`openweft`](https://github.com/openweft) | 70 | weft — a Go-native microVM cloud: drivers, network, block storage, HA services, runners, clients, native apps, and the loom editor built on it. |
-| [`go-virtio`](https://github.com/go-virtio) | 13 | Guest virtio drivers: net, blk, gpu with virgl and Venus, console, rng, vsock, balloon, fs, sound, input. |
+| [`go-virtio`](https://github.com/go-virtio) | 14 | Guest virtio drivers: net, blk, gpu with virgl and Venus, console, rng, vsock, balloon, fs, sound, input. |
 | [`go-proc`](https://github.com/go-proc) | 2 | A PID-1 subreaper and process supervisor, and the restart state machine that decides when to try again. |
 | [`go-coord`](https://github.com/go-coord) | 1 | Cross-host coordination on etcd v3: host liveness, watches, leader election. |
 | [`go-net-dhcp`](https://github.com/go-net-dhcp) | 1 | A dependency-free DHCPv4 server library. |
 | [`go-net-health`](https://github.com/go-net-health) | 2 | Active health probes — stateless TCP and HTTP checks folded into a rolling verdict. |
 | [`cloud-pool-managers`](https://github.com/cloud-pool-managers) | 1 | VM pool management. |
 | [`claimward`](https://github.com/claimward) | 6 | A WireGuard VPN with OIDC: the server, the client, and desktop apps for macOS, Linux and Windows. |
+| [`go-wasmcontainers`](https://github.com/go-wasmcontainers) | 9 | A container engine for WASI workloads, speaking the Docker Engine API: the engine, a Containerfile builder, Compose, a terminal playground, a dashboard, a classroom relay, and GPU access through wasi-nn and wasi:webgpu. |
+
+## LLM serving
+
+Putting a model behind an interface, measuring what the interface costs, and keeping what must not leave out of the request.
+
+| Organisation | Repos | What it holds |
+| --- | --- | --- |
+| [`go-llmflow`](https://github.com/go-llmflow) | 4 | An inference gateway, its measuring tools — an interleaved A/B overhead bench and a recording fake vLLM checked against a real one — AWS SigV4 signing and event-stream decoding, and checksum-validated PII recognisers. |
+
+## Calendaring & workplace APIs
+
+Clients for the services an organisation already runs, so a room or a calendar is scriptable from Go.
+
+| Organisation | Repos | What it holds |
+| --- | --- | --- |
+| [`go-zoom`](https://github.com/go-zoom) | 1 | A client and CLI for the Zoom Calendar API, booking Zoom Rooms as event resources. |
 
 ## Configuration management
 
@@ -258,7 +280,7 @@ Two engines hand-ported to pure Go, one of them onto bare metal.
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-quake1`](https://github.com/go-quake1) | 1 | Quake 1, hand-ported from tyrquake, with a bare-metal target. |
+| [`go-quake1`](https://github.com/go-quake1) | 2 | Quake 1, hand-ported from tyrquake, with a bare-metal target. |
 | [`go-doom`](https://github.com/go-doom) | 1 | DOOM, hand-ported through the gore lineage, with a TamaGo bare-metal back-end. |
 
 ## The map itself
@@ -275,7 +297,7 @@ Tools that act on the ecosystem rather than inside it: they read every repositor
 
 | Organisation | Repos | What it holds |
 | --- | --- | --- |
-| [`go-fleettools`](https://github.com/go-fleettools) | 9 | Sweeps across the whole map, each answering one question and refusing to answer it vaguely: which default branches are red, which modules declare a toolchain floor below the one a fix needs, which installed tools were built with an older compiler, which repositories decode an image or a ZIP entry with no ceiling, which landing page is the odd one out — plus the shared landing design itself, a mutation runner that proves a test can fail, and a checks-waiter that refuses to call an empty check list a pass. |
+| [`go-fleettools`](https://github.com/go-fleettools) | 11 | Sweeps across the whole map, each answering one question and refusing to answer it vaguely: which default branches are red, which modules declare a toolchain floor below the one a fix needs, which installed tools were built with an older compiler, which repositories decode an image or a ZIP entry with no ceiling, which landing page is the odd one out — plus the shared landing design itself, a mutation runner that proves a test can fail, and a checks-waiter that refuses to call an empty check list a pass. |
 | [`go-agentsync`](https://github.com/go-agentsync) | 1 | Coordination for sessions that share one machine: leases on repositories so two of them do not edit the same tree, a per-repository mailbox, and a memory index written back and read again, because an entry that reports success and then vanishes is indistinguishable from one never written. |
 
 ## Ruby gems — one organisation each
@@ -314,6 +336,7 @@ a capability is the easiest way to believe a capability exists.
 
 | Organisation | Intended for |
 | --- | --- |
+| [`go-pkgx`](https://github.com/go-pkgx) | Renamed to go-zpkg on 2026-11-09; all eight repositories were TRANSFERRED, not deleted (go-pkgx/packages answers as go-zpkg/packages, and pkgx itself as zpkgx). The name is held so the map shows a rename rather than a disappearance. |
 | [`go-graphdrawing`](https://github.com/go-graphdrawing) | Graph-drawing algorithms — Sugiyama layering, force-directed placement, trees. Measured and deliberately deferred: pgf's graphdrawing is used by 5 documents in a 10,025-talk corpus. |
 | [`go-grub`](https://github.com/go-grub) | Superseded in practice by go-bootloaders/grub. |
 | [`go-quake2`](https://github.com/go-quake2) | A Quake II engine, after go-quake1. |
